@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import AlertError from './AlertError'
 
 const Form = ({datos, setDatos}) => {
 
@@ -37,9 +38,7 @@ const Form = ({datos, setDatos}) => {
     <div className='flex w-full'>
         <div className='shadow-lg bg-slate-200 rounded-md mx-6 py-3 w-full'>
         <form onSubmit={handleSubmit}>
-          {error && (
-            <p className='text-danger'>{error}</p>
-          )}
+          {error && <AlertError>Falta diligenciar campos del formulario</AlertError> }
             <div className='auto-rows-auto m-4'>
             <label className='w-full'>👱 Nombre</label>
             <input 

@@ -1,16 +1,28 @@
-const Tarea = ({tarea}) => {
-  console.log(tarea)
+const Tarea = ({tarea, setTarea}) => {
+
+  const {titulo, fecha, descripcion} = tarea
+
   return (
-    <div className="w-full">
+    <div className="">
       <div className="shadow-lg bg-slate-200 rounded-md h-1/2 mx-6 mb-2">
         <div className="py-5">
-          <div className="font-bold mx-6 p-2">👱 Titulo: {datos.titulo}</div>
-          <div className="font-bold mx-6 p-2">📱 Fecha: {datos.fecha}</div>
-          <div className="font-bold mx-6 p-2">📩 Descripción: {datos.descripcion}</div>
+          <div className="mx-6 p-2"> <span>👱 Titulo:</span> <span className="font-bold">{titulo}</span></div>
+          <div className="mx-6 p-2"><span>📱 Fecha:</span> <span className="font-bold">{fecha}</span></div>
+          <div className="mx-6 p-2"><span>📩 Descripción:</span> <span className="font-bold">{descripcion}</span></div>
+          
+          <div className="text-center justify-between">
+          <button 
+          className="bg-green-500 hover:bg-green-600 mt-3 py-1 px-4 mx-2 rounded-full text-bold text-sm" 
+          type="button"
+          onClick={ () => setTarea(tarea)}
+          
+          >Actualizar</button>
+          <button className="bg-blue-500 hover:bg-blue-600 mt-3 py-1 px-4 mx-2 rounded-full text-bold text-sm" type="button">Eliminar</button>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default Tarea;
+export default Tarea

@@ -2,25 +2,29 @@ import React from 'react'
 import Header from './Header'
 import Form from './Form'
 import { useState } from 'react'
-import Resultado from './Resultado' 
+import ListaTareas from './ListaTareas' 
 
 const App = () => {
 
-    const [datos, setDatos] = useState([])
+    const [tareas, setTareas] = useState([])
+    const [tarea, setTarea] = useState({})
 
   return (
     <>
     <div className='w-full text-center'>
         <Header />
     </div>
-    <div className='flex'>
-    <div className='w-1/2'>
-        <Form datos={datos} setDatos={setDatos} />
+    <div className='grid grid-cols-1 md:grid-cols-2'>
+    <div className='w-full'>
+        <Form 
+        tarea={tarea}
+        tareas={tareas} 
+        setTareas={setTareas} />
     </div>
-    <div className='w-1/2'>
-        <Resultado 
-          datos={datos}
-          
+    <div className='w-full'>
+        <ListaTareas
+          tareas={tareas}
+          setTarea={setTarea}
         />
     </div>
     </div>

@@ -1,7 +1,6 @@
 import Tarea from "./Tarea";
 
-const ListaTareas = ({ tareas, setTarea }) => {
-
+const ListaTareas = ({ tareas, setTarea, eliminarTarea }) => {
   return (
     <div>
       {tareas && tareas.length ? (
@@ -10,7 +9,14 @@ const ListaTareas = ({ tareas, setTarea }) => {
             Tareas pendientes
           </div>
           {tareas.map((tarea) => {
-            return <Tarea key={tarea.id} tarea={tarea} setTarea={setTarea} />;
+            return (
+              <Tarea
+                key={tarea.id}
+                tarea={tarea}
+                setTarea={setTarea}
+                eliminarTarea={eliminarTarea}
+              />
+            );
           })}
         </>
       ) : (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AlertError from "./AlertError";
 
-const Form = ({ tarea, tareas, setTareas }) => {
+const Form = ({ tarea, tareas, setTareas, setTarea }) => {
   const [titulo, setTitulo] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const [fecha, setFecha] = useState("");
@@ -39,10 +39,14 @@ const Form = ({ tarea, tareas, setTareas }) => {
 
     // Editar la tarea
     if (tarea.id) {
+
+      objetoTareas.id = tarea.id
+
       const tareasActualizadas = tareas.map((tareaState) =>
         tareaState.id === tarea.id ? objetoTareas : "una cosa"
       );
-      setTareas(tareasActualizadas)
+      setTareas(tareasActualizadas);
+      setTarea({});
     } else {
       // Spread operator ...tareas
       objetoTareas.id = generarId();

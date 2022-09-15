@@ -8,3 +8,5 @@ Vite + React
 TailwindCss
 
 Desarrollado: CRUD y LocalStorage
+
+![image](https://user-images.githubusercontent.com/885652/190505386-216a9335-ce12-4786-94cb-cc9fb3de645f.png)
